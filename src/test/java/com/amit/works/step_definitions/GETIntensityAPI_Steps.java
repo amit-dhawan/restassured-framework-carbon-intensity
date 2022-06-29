@@ -37,15 +37,16 @@ public class GETIntensityAPI_Steps {
     public void i_call_http_method_on_this_endpoint(String httpMethod, String endpoint) {
         this.endpoint = endpoint;
         response = given().spec(requestSpecification).when().get(endpoint);
-        intensityResponseObj = response.as(IntensityResponse.class);
+
 
 
     }
 
     @Then("I should get status code as {int}")
     public void i_should_get_status_code_as(int statusCodeExpected) {
+
         // response.then().log().all();
-        Assert.assertTrue(statusCodeExpected == response.statusCode());
+        Assert.assertTrue("Actual: " + response.statusCode() + " Expected: " + statusCodeExpected , statusCodeExpected == response.statusCode());
     }
 
     @Then("Json schema of {string} response is as expected")
@@ -80,6 +81,7 @@ public class GETIntensityAPI_Steps {
 
     @Then("I should get {int} carbon intensity object in response")
     public void iShouldGetCarbonIntensityObjectInResponse(int count) {
+        intensityResponseObj = response.as(IntensityResponse.class);
         Assert.assertTrue("Actual: " + intensityResponseObj.getData().size() +
                         " Expected: " + count,
                 intensityResponseObj.getData().size() == count);
@@ -89,6 +91,6 @@ public class GETIntensityAPI_Steps {
     public void iCallHttpMethodOnEndpointWithPathParam(String httpMethod, String endpoint, String pathParam) {
         response = given().spec(requestSpecification).pathParam("dates", pathParam).
                 when().get("intensity/date/{dates}");
-        intensityResponseObj = response.as(IntensityResponse.class);
+
     }
 }

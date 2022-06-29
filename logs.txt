@@ -1,0 +1,30 @@
+Request method:	GET
+Request URI:	https://api.carbonintensity.org.uk/intensity/date/1001-01-01
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	dates=1001-01-01
+Headers:		Accept=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 18
+Connection: keep-alive
+Date: Wed, 29 Jun 2022 17:13:58 GMT
+x-amzn-RequestId: 8d2278d8-1121-4f05-aaa1-2c6f65b0818d
+Access-Control-Allow-Origin: *
+x-amz-apigw-id: Ufo9gFutLPEFWIw=
+X-Amzn-Trace-Id: Root=1-62bc8856-065e5ea75680148f27710c9b;Sampled=0
+X-Cache: Miss from cloudfront
+Via: 1.1 73afe8565c6794e933a665f6672c4b12.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: LHR50-P4
+X-Amz-Cf-Id: GtjMTUpN3Ze7T7xScEFlIA4yMb9IXtl3NJ_o7gVm5V78ISa4AXbFeQ==
+
+{
+    "data": [
+        
+    ]
+}
