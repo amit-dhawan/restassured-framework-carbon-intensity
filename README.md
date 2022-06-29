@@ -21,6 +21,8 @@ This is rest-assured API automation framework for testing carbon intensity APIs 
 3. Type "mvn install" in cmd prompt(Windows) or terminal(Mac) to install the required dependencies and trigger test
 4. Import the proejct in you IDE - Intellij or Eclipse as a maven project
 5. If you want to run tests navigate to restassured-framework-carbon-intensity/src/test/java/com/amit/works/test_runners/TestRunner1.java file, Right click and click on **Run** option
+![image](https://user-images.githubusercontent.com/18731643/176460895-6dce8744-7035-48c3-8285-ea9b8184dbd4.png)
+
 
 # Feature Files: 
 Test Cases are written in Cucumber BDD format 
