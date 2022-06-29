@@ -44,13 +44,14 @@ public class GETIntensityAPI_Steps {
 
     @Then("I should get status code as {int}")
     public void i_should_get_status_code_as(int statusCodeExpected) {
+        // response.then().log().all();
         Assert.assertTrue(statusCodeExpected == response.statusCode());
     }
 
     @Then("Json schema of {string} response is as expected")
     public void json_schema_of_response_of_is_as_expected(String endpoint) {
 // validate json schema
-        File file = new File("src/test/resources/responseJson/IntensityResponse.json");
+        File file = new File("src/test/resources/schema/IntensitySchema.json");
         response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(file));
 
     }
@@ -82,5 +83,12 @@ public class GETIntensityAPI_Steps {
         Assert.assertTrue("Actual: " + intensityResponseObj.getData().size() +
                         " Expected: " + count,
                 intensityResponseObj.getData().size() == count);
+    }
+
+    @When("I call {string} http method on {string} endpoint with path param {string}")
+    public void iCallHttpMethodOnEndpointWithPathParam(String httpMethod, String endpoint, String pathParam) {
+        response = given().spec(requestSpecification).pathParam("dates", pathParam).
+                when().get("intensity/date/{dates}");
+        intensityResponseObj = response.as(IntensityResponse.class);
     }
 }

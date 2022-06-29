@@ -12,15 +12,22 @@ import java.io.PrintStream;
 public class Utility {
 
     private static RequestSpecification requestSpecification;
+    private static PrintStream stream;
 
     public static RequestSpecification getRequestSpecification(String domain) throws IOException {
-        PrintStream stream = new PrintStream(new FileOutputStream("logs.txt"));
+        stream = new PrintStream(new FileOutputStream("logs.txt"));
         requestSpecification = new RequestSpecBuilder().
                 setBaseUri(ReadConfig.getProperty(domain + "Domain")).
                 addHeader("Accept", "application/json")
                 .addFilter(RequestLoggingFilter.logRequestTo(stream))
                 .addFilter(ResponseLoggingFilter.logResponseTo(stream)).build();
-        stream.close();
+
         return requestSpecification;
+    }
+
+    public static void closePrintStream() {
+        if (stream != null) {
+            stream.close();
+        }
     }
 }

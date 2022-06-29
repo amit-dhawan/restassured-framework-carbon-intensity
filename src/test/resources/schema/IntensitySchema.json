@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "from": {
+              "type": "string"
+            },
+            "to": {
+              "type": "string"
+            },
+            "intensity": {
+              "type": "object",
+              "properties": {
+                "forecast": {
+                  "type": "integer"
+                },
+                "actual": {
+                  "type": "integer"
+                },
+                "index": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "forecast",
+                "actual",
+                "index"
+              ]
+            }
+          },
+          "required": [
+            "from",
+            "to",
+            "intensity"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "data"
+  ]
+}
