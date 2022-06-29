@@ -30,5 +30,7 @@ Feature files are available at - restassured-framework-carbon-intensity/src/test
 * After successfull test execution Cucumber HTML reports will be generated at -> restassured-framework-carbon-intensity/target/cucumber-html/cucumber.html location
 * Open .html file with browser to see the report
 * Cucumber pretty format report will be printed in console output
+* ![image](https://user-images.githubusercontent.com/18731643/176460448-6186c6fd-ee67-409a-8094-09bfe52d4e4f.png)
+
 * Request/Response will be logged in logs.txt at => restassured-framework-carbon-intensity/logs.txt file
 
