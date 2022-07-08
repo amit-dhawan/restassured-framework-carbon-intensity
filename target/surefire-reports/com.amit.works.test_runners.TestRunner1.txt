@@ -1,0 +1,31 @@
+-------------------------------------------------------------------------------
+Test set: com.amit.works.test_runners.TestRunner1
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 3.351 s <<< FAILURE! - in com.amit.works.test_runners.TestRunner1
+Verify Get /intensity endpoint responds successfully - Happy Path(Get Carbon Intensity data for current half hour. All times provided in UTC (+00:00))  Time elapsed: 2.178 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Response body doesn't match expectation.
+Expected: The content to match the given JSON schema.
+error: instance type (null) does not match any allowed primitive type (allowed: ["integer"])
+    level: "error"
+    schema: {"loadingURI":"#","pointer":"/properties/data/items/0/properties/intensity/properties/actual"}
+    instance: {"pointer":"/data/0/intensity/actual"}
+    domain: "validation"
+    keyword: "type"
+    found: "null"
+    expected: ["integer"]
+
+  Actual: { 
+  "data":[{ 
+    "from": "2022-06-29T12:30Z",
+    "to": "2022-06-29T13:00Z",
+    "intensity": {
+      "forecast": 178,
+      "actual": null, 
+      "index": "moderate"
+    }
+  }]
+}
+
+
